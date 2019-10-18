@@ -1,0 +1,398 @@
+package eg.edu.alexu.csd.oop.calculato.cs46.calculator.cs;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+
+import java.io.*;
+import java.nio.file.FileSystemNotFoundException;
+import java.util.LinkedList;
+
+
+public class Controller  implements Calculator {
+    LinkedList<String> oma=new LinkedList<String>();
+
+int i=0;
+
+@FXML
+    private String num1="";
+private  char operation;
+
+   @FXML
+private TextField omar;
+    @FXML
+    private Button seven;
+
+
+    @FXML
+    private Button eight;
+
+    @FXML
+    private Button nine;
+
+    @FXML
+    private Button divide;
+
+    @FXML
+    private Button four;
+
+    @FXML
+    private Button five;
+
+    @FXML
+    private Button six;
+
+    @FXML
+    private Button multiplication;
+
+    @FXML
+    private Button one;
+
+    @FXML
+    private Button two;
+
+    @FXML
+    private Button three;
+
+    @FXML
+    private Button minus;
+
+    @FXML
+    private Button zero;
+
+    @FXML
+    private Button equal;
+
+    @FXML
+    private Button plus;
+
+
+Button thr=new Button("3");
+
+    public Controller() throws FileNotFoundException {
+    }
+
+    public void onbuttonthr(ActionEvent event )
+{
+    num1=omar.getText()+thr.getText();
+    omar.setText(num1);
+
+}
+Button tw=new Button("2");
+    public void onbuttontw(ActionEvent event )
+    {
+        num1=omar.getText()+tw.getText();
+        omar.setText(num1);
+
+    }
+    Button on=new Button("1");
+    public void onbuttonon(ActionEvent event)
+    {
+        num1=omar.getText()+on.getText();
+        omar.setText(num1);
+    }
+    Button fou=new Button("4");
+    public void onbuttonfou(ActionEvent event )
+    {
+        num1=omar.getText()+fou.getText();
+        omar.setText(num1);
+
+    }
+    Button fiv=new Button("5");
+    public void onbuttonfiv(ActionEvent event )
+    {
+        num1=omar.getText()+fiv.getText();
+        omar.setText(num1);
+
+    }
+    Button si=new Button("6");
+    public void onbuttonsi(ActionEvent event )
+    {
+        num1=omar.getText()+si.getText();
+        omar.setText(num1);
+
+    }
+    Button seve=new Button("7");
+    public void onbuttonseve(ActionEvent event )
+    {
+        num1=omar.getText()+seve.getText();
+        omar.setText(num1);
+
+    }
+    Button eigh=new Button("8");
+    public void onbuttoneigh(ActionEvent event )
+    {
+        num1=omar.getText()+eigh.getText();
+        omar.setText(num1);
+
+    }
+    Button nin=new Button("9");
+    public void onbuttonnin(ActionEvent event )
+    {
+        num1=omar.getText()+nin.getText();
+        omar.setText(num1);
+
+    }
+    Button plu=new Button("+");
+    public void onbuttonplus(ActionEvent event )
+    {
+        num1=omar.getText()+plu.getText();
+        omar.setText(num1);
+operation='+';
+    }
+Button minu=new Button("-");
+    public void onbuttonminu(ActionEvent event )
+    {
+        num1=omar.getText()+minu.getText();
+        omar.setText(num1);
+
+        if(operation=='\0') {
+            operation = '-';
+        }
+
+
+    }
+
+    Button multiplicate =new Button("*");
+    public void onbuttonmultiplicate(ActionEvent event )
+    {
+        num1=omar.getText()+multiplicate.getText();
+        omar.setText(num1);
+        operation='*';
+
+    }
+    Button divi=new Button("/");
+    public void onbuttondivi(ActionEvent event )
+    {
+        num1=omar.getText()+divi.getText();
+        omar.setText(num1);
+        operation='/';
+    }
+Button EQU= new Button("=");
+
+    public void onbuttonequal(ActionEvent event )
+    {
+
+
+        num1=omar.getText();
+        omar.setText(num1);
+        oma.add(num1);
+    i++;
+
+
+        omar.setText(getResult());
+
+    }
+    Button zer=new Button("0");
+    public void   onbuttonzer(ActionEvent event)
+    {
+        num1=omar.getText()+zer.getText();
+        omar.setText(num1);
+    }
+
+    Button curren=new Button("current");
+    public void onbuttocurrent(ActionEvent event)
+    {
+
+
+        omar.setText(current());
+
+    }
+    public String current()
+    {
+        return oma.get(oma.size()-1);
+    }
+
+    public void onbuttonprevious(ActionEvent event)
+    {
+        if(i==oma.size()) {
+            i = i - 2;
+            omar.setText(prev());
+        }
+
+        else if(i>=0){
+            i--;
+            omar.setText(prev());
+        }
+        else if(i<0)
+        {
+            omar.setText("");
+        }
+
+    }
+    public String prev()
+    {
+        return oma.get(i);
+    }
+    int m=0;
+
+    public void onbuttonnext(ActionEvent event )
+    {
+        if(i==oma.size()-1)
+        {
+            omar.setText("");
+        }
+        else {
+            omar.setText(next());
+            i++;
+        }
+
+    }
+    public String next()
+    {
+    return oma.get(i+1);
+
+    }
+
+
+    public String getResult(){
+        double number1;
+        double number2;
+
+        String first="";
+        String second="";
+        String answer;
+        int i=0;
+        double result=0;
+        first=operation(operation,num1);
+        i=operate(operation,num1);
+        char operation;
+
+        operation=num1.charAt(i);
+        i++;
+
+
+            while (i < num1.length()) {
+                second = second + num1.charAt(i);
+                i++;
+            }
+
+input(first+operation+second);
+        number1=Double.parseDouble(first);
+        number2=Double.parseDouble(second);
+
+
+
+        if(operation=='+')
+        {
+            result=number1+number2;
+        }
+        else if(operation=='-')
+        {
+            result=number1-number2;
+        }
+        else if(operation=='*')
+        {
+            result=number1*number2;
+        }
+        else if(operation=='/'){
+            result=number1/number2;
+        }
+
+        answer=Double.toString(result);
+        return answer;
+    }
+    public   String operation(char a,String input)
+    {
+        int i=0;
+        String  first="";
+        if(input.charAt(0)=='-'&&a=='-')
+        {
+            i++;
+        }
+        while(input.charAt(i)!=a)
+        {
+            first=first+input.charAt(i);
+            i++;
+        }
+
+if(input.charAt(0)=='-'&&a=='-') {
+    return '-' + first;
+}
+else{
+    return  first;
+
+}
+    }
+
+    public  static  int operate(char a,String input)
+    {
+        int i=0;
+        String  first="";
+        if(input.charAt(0)=='-'&&a=='-'){
+            i++;
+        }
+        while(input.charAt(i)!=a)
+        {
+            first=first+input.charAt(i);
+            i++;
+        }
+        return  i;
+    }
+    public void save () throws FileSystemNotFoundException {
+        try (FileWriter writer = new FileWriter("images.txt" );
+             BufferedWriter bw = new BufferedWriter(writer)) {
+int q=0;
+for(int m=i-1;q<5;m--,q++) {
+    bw.write(oma.get(m));
+    bw.newLine();
+}
+
+
+        } catch (IOException e) {
+            System.err.format("IOException: %s%n", e);
+        }
+    }
+    Button dot=new Button(".");
+    public void onButtondot(ActionEvent event)
+    {
+        num1=omar.getText()+dot.getText();
+        omar.setText(num1);
+    }
+   public void OnButtonSave(ActionEvent event) throws FileNotFoundException {
+     save();
+   }
+   public void onButtonclean(ActionEvent event)
+   {
+       omar.setText("");
+   }
+   public void onButtonload(ActionEvent event)
+   {
+       try {
+           load();
+       } catch (FileNotFoundException e) {
+           e.printStackTrace();
+       }
+   }
+    public void input(String num1)
+    {
+      this.num1=num1;
+    }
+   public void load() throws FileNotFoundException {
+       BufferedReader objReader = null;
+       try {
+           String strCurrentLine;
+
+           objReader = new BufferedReader(new FileReader("images.txt"));
+
+           while ((strCurrentLine = objReader.readLine()) != null) {
+
+               omar.setText(current());
+           }
+
+       } catch (IOException e) {
+
+           e.printStackTrace();
+
+       } finally {
+
+           try {
+               if (objReader != null)
+                   objReader.close();
+           } catch (IOException ex) {
+               ex.printStackTrace();
+           }
+       }
+   }
+}
