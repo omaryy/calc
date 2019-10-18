@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eg.edu.alexu.csd.oop.calculato.cs46.calculator.cs.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <VBox prefHeight="400.0" prefWidth="300.0">
+         <children>
+            <StackPane prefHeight="50.0" prefWidth="300.0">
+               <children>
+                  <TextField fx:id="omar">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+               </children></StackPane>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="10.0">
+               <children>
+                  <Button fx:id="seven" mnemonicParsing="false" onAction="#onbuttonseve" prefWidth="50.0" text="7">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="eight" mnemonicParsing="false" onAction="#onbuttoneigh" prefWidth="50.0" text="8">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="nine" mnemonicParsing="false" onAction="#onbuttonnin" prefWidth="50.0" text="9">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="divide" mnemonicParsing="false" onAction="#onbuttondivi" prefWidth="50.0" text="/">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="10.0">
+               <children>
+                  <Button fx:id="four" mnemonicParsing="false" onAction="#onbuttonfou" prefWidth="50.0" text="4">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="five" mnemonicParsing="false" onAction="#onbuttonfiv" prefWidth="50.0" text="5">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="six" mnemonicParsing="false" onAction="#onbuttonsi" prefWidth="50.0" text="6">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button id="multiplication" mnemonicParsing="false" onAction="#onbuttonmultiplicate" prefWidth="50.0" text="*">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="10.0">
+               <children>
+                  <Button fx:id="one" mnemonicParsing="false" onAction="#onbuttonon" prefWidth="50.0" text="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="two" mnemonicParsing="false" onAction="#onbuttontw" prefWidth="50.0" text="2">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="three" mnemonicParsing="false" onAction="#onbuttonthr" prefWidth="50.0" text="3">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="minus" mnemonicParsing="false" onAction="#onbuttonminu" prefWidth="50.0" text="-">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="10.0">
+               <children>
+                  <Button mnemonicParsing="false" prefWidth="50.0" onAction="#onButtondot" text=".">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="zero" mnemonicParsing="false" onAction="#onbuttonzer" prefWidth="50.0" text="0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="equal" mnemonicParsing="false" onAction="#onbuttonequal" prefWidth="50.0" text="=">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="plus" mnemonicParsing="false" onAction="#onbuttonplus" prefWidth="50.0" text="+">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="10.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#onbuttonnext" prefWidth="70.0" text="next">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onbuttonprevious" prefWidth="70.0" text="previous">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onbuttocurrent" prefWidth="70.0" text="current">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="10.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#onButtonclean" prefWidth="70.0" text="clear">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#OnButtonSave" prefWidth="70.0" text="Save">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onButtonload" prefWidth="70.0" text="Load">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</GridPane>
