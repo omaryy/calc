@@ -1,0 +1,19 @@
+module calculator {
+
+    requires javafx.fxml;
+    requires javafx.controls;
+    requires java.desktop;
+    requires javafx.graphics;
+    requires javafx.media;
+    requires javafx.base;
+    requires java.compiler;
+    requires javafx.swt;
+    requires java.logging;
+    requires java.datatransfer;
+    requires java.instrument;
+    requires java.management;
+    requires junit;
+
+
+    opens eg.edu.alexu.csd.oop.calculato.cs46.calculator.cs;
+}
